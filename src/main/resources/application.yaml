@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: ZookeeperExampleApp
+  cloud:
+    zookeeper:
+      discovery:
+        enabled: true
+      connect-string: localhost:2181
+      config:
+        enabled: false
+  devtools:
+    remote:
+      debug: true
+
+endpoints:
+  restart:
+    enabled: true
+  shutdown:
+    enabled: true
+  health:
+    sensitive: false
+
+logging.level:
+  org.apache.zookeeper.ClientCnxn: WARN
+
+management:
+  security:
+    enabled: false
